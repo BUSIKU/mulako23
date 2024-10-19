@@ -1,0 +1,100 @@
+/* General body styling */
+html, body {
+    height: 100%; /* Ensures the body takes full height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content up and footer down */
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB 0%, #f4f4f4 100%); /* Light blue for sky */
+    overflow: hidden; /* Prevents scrollbars due to cloud animations */
+    color: #333;
+    text-align: center;
+    position: relative; /* Allows cloud layers to be placed in the background */
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('clouds.png') repeat-x; /* Add your cloud image here */
+    animation: moveClouds 60s linear infinite; /* Animation for moving clouds */
+    z-index: -1; /* Ensures clouds are behind the content */
+    opacity: 0.8;
+}
+
+/* Search box styling */
+.search-box {
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    padding: 10px;
+    width: 80%;
+    font-size: 16px;
+}
+
+#searchButton {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+/* Weather info box */
+.weather-info {
+    margin-top: 20px;
+    display: none;
+}
+
+/* Footer styling */
+footer {
+    background-color: green;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    position: relative; /* Ensures it doesn't overlap */
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Cloud animation keyframes */
+@keyframes moveClouds {
+    0% { background-position: 0 0; }
+    100% { background-position: 10000px 0; } /* Adjust this for slower or faster movement */
+}
